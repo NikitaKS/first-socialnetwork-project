@@ -1,0 +1,11 @@
+.nav {
+    grid-area: n;
+    background-color: brown;
+}
+.item a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.item{
+    color: aliceblue;
+}
