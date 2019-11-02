@@ -12,8 +12,8 @@ class MyPosts extends React.Component {
                     <button>Add Post</button>
                 </div>
                 <div className={s.posts}>
-                    <Post message='How are u?'/>
-                    <Post message='Its my first post'/>
+                    <Post message='How are u?' like='15'/>
+                    <Post message='Its my first post' like='21'/>
                 </div>
             </div>
         );

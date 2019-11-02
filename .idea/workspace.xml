@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d66b475-55f8-4de7-b894-4399f3e5339b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" afterDir="false" />
     </list>
@@ -37,16 +35,16 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\react\project\first_project\my-app\src\components\Profile" />
-      <recent name="D:\react\project\first_project\my-app\src\components\Nav" />
-      <recent name="D:\react\project\first_project\my-app\src\components\Header" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\react\project\first_project\my-app\src\components\Profile\MyPosts\Post" />
       <recent name="D:\react\project\first_project\my-app\src\components\Profile\MyPosts" />
       <recent name="D:\react\project\first_project\my-app\src\components" />
       <recent name="D:\react\project\first_project\my-app\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\react\project\first_project\my-app\src\components\Profile" />
+      <recent name="D:\react\project\first_project\my-app\src\components\Nav" />
+      <recent name="D:\react\project\first_project\my-app\src\components\Header" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -76,7 +74,7 @@
       <workItem from="1572520652398" duration="9556000" />
       <workItem from="1572602367915" duration="3435000" />
       <workItem from="1572627452299" duration="2255000" />
-      <workItem from="1572685782983" duration="3313000" />
+      <workItem from="1572685782983" duration="5628000" />
     </task>
     <servers />
   </component>
