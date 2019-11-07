@@ -8,7 +8,7 @@ class Post extends React.Component {
                 <img src="https://www.meme-arsenal.com/memes/7bdea6754f999b50e9577596f09197fb.jpg" alt=""/>
                 { this.props.message }
                 <div>
-                    <span>like {this.props.like}</span>
+                    <span>like { this.props.like }</span>
                 </div>
 
             </div>
