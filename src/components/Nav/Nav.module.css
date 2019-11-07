@@ -6,6 +6,7 @@
     text-decoration: none;
     color: aliceblue;
 }
-.item{
-    color: aliceblue;
+.item a.activeLink{
+    color: black;
+    font-weight: bold;
 }
