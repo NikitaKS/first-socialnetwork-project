@@ -1,23 +1,24 @@
 import React from 'react';
-import classes from './Nav.module.css';
+import s from './Nav.module.css';
+
 class Nav extends React.Component {
     render = () => {
         return (
-            <nav className={classes.nav}>
-                <div className={classes.item}>
-                    <a href="#">Profile</a>
+            <nav className={s.nav}>
+                <div className={s.item}>
+                    <a href="/profile">Profile</a>
                 </div>
-                <div className={classes.item}>
-                    <a href="#">News</a>
+                <div className={s.item}>
+                    <a href="/news">News</a>
                 </div>
-                <div className={classes.item}>
-                    <a href="#">Messages</a>
+                <div className={s.item}>
+                    <a href="/dialogs">Messages</a>
                 </div>
-                <div className={classes.item}>
-                    <a href="#">Music</a>
+                <div className={s.item}>
+                    <a href="/music">Music</a>
                 </div>
-                <div className={classes.item}>
-                    <a href="#">Settings</a>
+                <div className={s.item}>
+                    <a href="/settings">Settings</a>
                 </div>
             </nav>
         );
