@@ -5,13 +5,7 @@ import PropTypes from 'prop-types';
 
 class MyPosts extends React.Component {
     render = () => {
-        let postData = [
-            {id: 1, like: 11, message: 'How are u?'},
-            {id: 2, like: 22, message: 'Its my first post'},
-            {id: 3, like: 223, message: '123'},
-        ];
-        let PostsElements = postData.map(item => <Post message={item.message} like={item.like}/>);
-
+        let PostsElements = this.props.postData.map(item => <Post message={item.message} like={item.like}/>);
         return (
             <div className={s.postBlock}>
                 <h3>My Posts</h3>
