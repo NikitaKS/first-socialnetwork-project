@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './Post.module.css';
+import ava from '../../../../AVA.jpg'
 
 class Post extends React.Component {
     render = () => {
         return (
             <div className={s.item}>
-                <img src="https://www.meme-arsenal.com/memes/7bdea6754f999b50e9577596f09197fb.jpg" alt=""/>
+                <img src={ava} alt=""/>
                 { this.props.message }
                 <div>
                     <span>like { this.props.like }</span>

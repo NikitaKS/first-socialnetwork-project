@@ -3,7 +3,9 @@ import s from '../Dialogs.module.css';
 import PropTypes from 'prop-types';
 
 const Message = (props) => {
-    return <div className={s.massage}>{props.message}</div>
+
+    let innerms = props.id !== 1 ? s.inner : "";
+    return <div className={`${s.massage} ${innerms}`}>{props.message}</div>
 };
 
 export default Message;

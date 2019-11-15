@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d66b475-55f8-4de7-b894-4399f3e5339b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Redux/State.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Friends/Friends.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Friends/Friends.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/State.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/State.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/MessageItem/MessageItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/MessageItem/MessageItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Dialogs/DialogItem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Friends" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,11 +52,11 @@
       <recent name="D:\react\project\first_project\my-app\src\components\Header" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\react\project\first_project\my-app\src\components\Friends" />
+      <recent name="D:\react\project\first_project\my-app\src\components" />
       <recent name="D:\react\project\first_project\my-app\src\components\Dialogs\DialogItem" />
       <recent name="D:\react\project\first_project\my-app\src\components\Dialogs\MessageItem" />
       <recent name="D:\react\project\first_project\my-app\src\components\Profile\ProfileInfo" />
-      <recent name="D:\react\project\first_project\my-app\src\components\Settings" />
-      <recent name="D:\react\project\first_project\my-app\src\components\News" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -93,7 +100,7 @@
       <workItem from="1573495699025" duration="49000" />
       <workItem from="1573567515748" duration="2059000" />
       <workItem from="1573676600383" duration="725000" />
-      <workItem from="1573811145534" duration="15878000" />
+      <workItem from="1573811145534" duration="22331000" />
     </task>
     <servers />
   </component>
