@@ -4,6 +4,7 @@
     <list default="true" id="2d66b475-55f8-4de7-b894-4399f3e5339b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
     </list>
@@ -89,7 +90,9 @@
       <workItem from="1573297238242" duration="599000" />
       <workItem from="1573466495054" duration="4298000" />
       <workItem from="1573495699025" duration="49000" />
-      <workItem from="1573567515748" duration="846000" />
+      <workItem from="1573567515748" duration="2059000" />
+      <workItem from="1573676600383" duration="725000" />
+      <workItem from="1573811145534" duration="5667000" />
     </task>
     <servers />
   </component>

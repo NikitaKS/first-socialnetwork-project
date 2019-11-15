@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
+import PropTypes from 'prop-types';
 
 class MyPosts extends React.Component {
     render = () => {
@@ -9,6 +10,7 @@ class MyPosts extends React.Component {
             {id: 2, like: 22, message: 'Its my first post'},
             {id: 3, like: 223, message: '123'},
         ];
+        let PostsElements = postData.map(item => <Post message={item.message} like={item.like}/>);
 
         return (
             <div className={s.postBlock}>
@@ -22,9 +24,7 @@ class MyPosts extends React.Component {
                     </div>
                 </div>
                 <div className={s.posts}>
-                    <Post message={postData[0].message} like={postData[0].like}/>
-                    <Post message={postData[1].message} like={postData[1].like}/>
-                    <Post message={postData[2].message} like={postData[2].like}/>
+                    {PostsElements}
                 </div>
             </div>
         );
@@ -32,3 +32,7 @@ class MyPosts extends React.Component {
 }
 
 export default MyPosts;
+
+Post.propTypes = {
+    message: PropTypes.string
+};

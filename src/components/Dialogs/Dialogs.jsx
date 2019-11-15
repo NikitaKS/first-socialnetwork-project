@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const DialogItem = (props) => {
     return (
@@ -30,26 +31,28 @@ const Dialogs = () => {
         {message: 'React', id: 5},
         {message: 'Learn', id: 6}
     ];
+    let DialogsItems = dialogData.map(item =>{
+        return <DialogItem name={item.name} id={item.id}/>;
+    });
+    let MessageItems = messageData.map(item => <Message message={item.message} />);
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem name={dialogData[0].name} id={dialogData[0].id}/>
-                <DialogItem name={dialogData[1].name} id={dialogData[1].id}/>
-                <DialogItem name={dialogData[2].name} id={dialogData[2].id}/>
-                <DialogItem name={dialogData[3].name} id={dialogData[3].id}/>
-                <DialogItem name={dialogData[4].name} id={dialogData[4].id}/>
-                <DialogItem name={dialogData[5].name} id={dialogData[5].id}/>
+                {DialogsItems}
             </div>
             <div className={s.massages}>
-                <Message message={messageData[0].message}/>
-                <Message message={messageData[1].message}/>
-                <Message message={messageData[2].message}/>
-                <Message message={messageData[3].message}/>
-                <Message message={messageData[4].message}/>
-                <Message message={messageData[5].message}/>
+                {MessageItems}
             </div>
         </div>
     )
 };
 
 export default Dialogs;
+
+DialogItem.propTypes = {
+    name: PropTypes.string,
+    id: PropTypes.number,
+};
+Message.propTypes = {
+    message: PropTypes.string,
+};
