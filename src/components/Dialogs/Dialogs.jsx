@@ -4,8 +4,13 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./MessageItem/MessageItem";
 
 const Dialogs = (props) => {
-
-    let DialogsItems = props.state.dialogData.map(item => <DialogItem name={item.name} id={item.id} img={item.img.ava}/>);
+    let messageRef = React.createRef();
+    const addMessage = () => {
+        let newMessage = messageRef.current.value;
+        alert(newMessage);
+    };
+    let DialogsItems = props.state.dialogData.map(item => <DialogItem name={item.name} id={item.id}
+                                                                      img={item.img.ava}/>);
     let MessageItems = props.state.messageData.map(item => <Message message={item.message} id={item.id}/>);
 
     return (
@@ -15,7 +20,10 @@ const Dialogs = (props) => {
             </div>
             <div className={s.massages}>
                 {MessageItems}
+                <textarea ref={messageRef}></textarea>
+                <button onClick={addMessage}>Send</button>
             </div>
+
         </div>
     )
 };

@@ -4,6 +4,19 @@ import Post from "./Post/Post";
 import PropTypes from 'prop-types';
 
 class MyPosts extends React.Component {
+    constructor(props) {
+        super(props);
+        this.inputRef = React.createRef();
+
+    };
+
+    addPost = () => {
+        this.props.addPost();
+    };
+    onPostChange = () => {
+        let text = this.inputRef.current.value;
+        this.props.updateNewPostText(text);
+    };
     render = () => {
         let PostsElements = this.props.postData.map(item => <Post message={item.message} like={item.like}/>);
         return (
@@ -11,10 +24,10 @@ class MyPosts extends React.Component {
                 <h3>My Posts</h3>
                 <div>
                     <div>
-                        <textarea name="" id="" cols="30" rows="1"></textarea>
+                        <textarea onChange={this.onPostChange} ref={this.inputRef} value={this.props.newPostText}/>
                     </div>
                     <div>
-                        <button>Add Post</button>
+                        <button onClick={this.addPost}>Add Post</button>
                     </div>
                 </div>
                 <div className={s.posts}>

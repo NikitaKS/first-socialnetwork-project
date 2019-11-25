@@ -8,7 +8,10 @@ class Profile extends React.Component {
         return (
             <div>
                 <ProfileInfo/>
-                <MyPosts postData={this.props.state.postData}/>
+                <MyPosts postData={this.props.profilePage.postData}
+                         newPostText={this.props.profilePage.newPostText}
+                         addPost={this.props.addPost}
+                         updateNewPostText={this.props.updateNewPostText}/>
             </div>
         );
     }
