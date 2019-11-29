@@ -1,5 +1,8 @@
 import ava from '../AVA.jpg'
-import {rerenderEntireTree} from "../render";
+
+let rerenderEntireTree = () => {
+
+};
 
 let state = {
     message: {
@@ -34,14 +37,17 @@ let state = {
         {name: 'Artur', id: 1}
     ]
 };
-export let addPost = () => {
-    let newPost ={id:5, like:0, message: state.profile.newPostText};
+export const addPost = () => {
+    let newPost = {id: 5, like: 0, message: state.profile.newPostText};
     state.profile.postData.push(newPost);
-    state.profile.newPostText ='';
+    state.profile.newPostText = '';
     rerenderEntireTree(state);
 };
-export let updateNewPostText = (newtext) => {
+export const updateNewPostText = (newtext) => {
     state.profile.newPostText = newtext;
     rerenderEntireTree(state);
+};
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 };
 export default state;
