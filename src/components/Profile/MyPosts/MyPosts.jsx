@@ -2,20 +2,20 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import PropTypes from 'prop-types';
+import {addPostActionCreator, onPostChangeActionCreator} from "../../../Redux/profileReducer";
 
 class MyPosts extends React.Component {
     constructor(props) {
         super(props);
         this.inputRef = React.createRef();
-
     };
 
     addPost = () => {
-        this.props.addPost();
+        this.props.dispatch(addPostActionCreator());
     };
     onPostChange = () => {
         let text = this.inputRef.current.value;
-        this.props.updateNewPostText(text);
+        this.props.dispatch(onPostChangeActionCreator(text));
     };
     render = () => {
         let PostsElements = this.props.postData.map(item => <Post message={item.message} like={item.like}/>);

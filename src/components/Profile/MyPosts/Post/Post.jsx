@@ -9,7 +9,7 @@ class Post extends React.Component {
                 <img src={ava} alt=""/>
                 { this.props.message }
                 <div>
-                    <span>like { this.props.like }</span>
+                    <span>like: { this.props.like }</span>
                 </div>
 
             </div>

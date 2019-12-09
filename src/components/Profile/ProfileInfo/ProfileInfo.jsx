@@ -7,7 +7,7 @@ class ProfileInfo extends React.Component {
             <div>
                 <div>
                     <img
-                        src="http://onlinetao.ru/blog/wp-content/uploads/2015/07/hq-wallpapers_ru_nature_35955_1920x1200.jpg"
+                        src="https://ux.pub/wp-content/uploads/2019/11/1-11.png"
                         alt=""/>
                 </div>
                 <div className={s.DescBlock}> ava+desc</div>

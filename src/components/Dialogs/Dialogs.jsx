@@ -2,12 +2,15 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./MessageItem/MessageItem";
+import {onAddMessageTextActionCreator, onMessageChangeTextActionCreator} from "../../Redux/dialogsReducer";
 
 const Dialogs = (props) => {
-    let messageRef = React.createRef();
     const addMessage = () => {
-        let newMessage = messageRef.current.value;
-        alert(newMessage);
+    props.dispatch(onAddMessageTextActionCreator());
+    };
+    const onChangeMessage = (e) => {
+        let newMessage = e.currentTarget.value;
+        props.dispatch(onMessageChangeTextActionCreator(newMessage));
     };
     let DialogsItems = props.state.dialogData.map(item => <DialogItem name={item.name} id={item.id}
                                                                       img={item.img.ava}/>);
@@ -20,7 +23,9 @@ const Dialogs = (props) => {
             </div>
             <div className={s.massages}>
                 {MessageItems}
-                <textarea ref={messageRef}></textarea>
+                <textarea onChange={onChangeMessage}
+                          placeholder={'Enter your message'}
+                          value={props.state.newMessage}> </textarea>
                 <button onClick={addMessage}>Send</button>
             </div>
 

@@ -6,9 +6,9 @@ import ava from '../../../AVA.jpg'
 
 const DialogItem = (props) => {
     return (
-        <div className={`${s.item} ${s.active}`}>
+        <div className={`${s.item}`}>
             <img src={props.img} alt=""/>
-            <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>
+            <NavLink activeClassName={s.active} to={"/dialogs/" + props.id}>{props.name}</NavLink>
         </div>
     )
 };
