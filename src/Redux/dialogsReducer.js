@@ -1,7 +1,30 @@
+import ava from "../AVA.jpg";
+
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE';
 
-const dialogsReducer = (state, action) => {
+let initialState = {
+    dialogData: [
+        {name: 'Dima', id: 1, img: {ava}},
+        {name: 'Sveta', id: 2, img: {ava}},
+        {name: 'Nikita', id: 3, img: {ava}},
+        {name: 'Sergei', id: 4, img: {ava}},
+        {name: 'Ola', id: 5, img: {ava}},
+        {name: 'Lera', id: 6, img: {ava}}
+    ],
+    messageData: [
+        {message: 'Hi', id: 1},
+        {message: 'Hi,How are u?', id: 2},
+        {message: 'Good', id: 1},
+        {message: 'Nie', id: 4},
+        {message: 'React', id: 1},
+        {message: 'Learn', id: 6}
+    ],
+    newMessage: '',
+};
+
+
+const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_TEXT:
             state.newMessage = action.newtext;
