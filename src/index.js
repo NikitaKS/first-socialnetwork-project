@@ -4,13 +4,14 @@ import * as serviceWorker from './serviceWorker';
 import store from "./Redux/redux-store";
 import ReactDOM from 'react-dom';
 import App from './App';
+import {Provider} from "react-redux";
 
-let rerenderEntireTree = () => {
-    ReactDOM.render(<App store={store}/>, document.getElementById('root'));
-};
-rerenderEntireTree(store.getState());
-store.subscribe(() => {
-    rerenderEntireTree()
-});
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>, document.getElementById('root')
+);
+
 
 serviceWorker.unregister();
