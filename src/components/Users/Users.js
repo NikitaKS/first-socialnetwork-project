@@ -1,36 +1,15 @@
 import React from 'react';
 import s from './users.module.css';
+import * as axios from "axios";
+import defaultUserPhoto from '../../assets/img/userdef.png';
 
 let Users = (props) => {
     if (props.users.length === 0) {
-        props.setUsers(
-            [
-                {
-                    id: 1,
-                    photo: 'http://img.rosbalt.ru/photobank/0/0/a/b/nxqXKbjv-800.jpg',
-                    followed: false,
-                    status: 'how are u',
-                    fullName: 'Dima',
-                    location: {city: 'Kyiv', country: 'Ukraine'}
-                },
-                {
-                    id: 2,
-                    photo: 'http://img.rosbalt.ru/photobank/0/0/a/b/nxqXKbjv-800.jpg',
-                    followed: true,
-                    status: 'music',
-                    fullName: 'Ola',
-                    location: {city: 'Moscow', country: 'Russia'}
-                },
-                {
-                    id: 3,
-                    photo: 'http://img.rosbalt.ru/photobank/0/0/a/b/nxqXKbjv-800.jpg',
-                    followed: false,
-                    status: 'films',
-                    fullName: 'Serg',
-                    location: {city: 'Sv', country: 'Ukraine'}
-                },
-            ]
-        );
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response=>{
+            debugger
+            props.setUsers(response.data.items);
+        });
+
     }
     return (
         <div>
@@ -39,7 +18,7 @@ let Users = (props) => {
                     return <div key={u.id}>
                         <span>
                             <div>
-                                <img className={s.userPhoto} src={u.photo} alt=""/>
+                                <img className={s.userPhoto} src={u.photos.small!== null?u.photos.small: defaultUserPhoto} alt=""/>
                             </div>
                             <div>
                                 {u.followed ?
@@ -52,12 +31,12 @@ let Users = (props) => {
                         </div>
                         </span>
                         <span>
-                            <div>{u.fullName}</div>
+                            <div>{u.name}</div>
                             <div> {u.status} </div>
                     </span>
                         <span>
-                            <div>{u.location.country}</div>
-                            <div>{u.location.city}</div>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
                         </span>
                     </div>
                 })
