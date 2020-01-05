@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2d66b475-55f8-4de7-b894-4399f3e5339b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/usersReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/users.module.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +31,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Redux" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Users" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -46,8 +49,8 @@
       <recent name="D:\react\project\first_project\my-app\src\components\Header" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\react\project\first_project\my-app\src\Redux" />
       <recent name="D:\react\project\first_project\my-app\src\components\Users" />
+      <recent name="D:\react\project\first_project\my-app\src\Redux" />
       <recent name="D:\react\project\first_project\my-app\src\components\Dialogs" />
       <recent name="D:\react\project\first_project\my-app\src\components\Profile\MyPosts" />
       <recent name="D:\react\project\first_project\my-app\src" />
@@ -138,7 +141,9 @@
       <workItem from="1577204451370" duration="2196000" />
       <workItem from="1577207284147" duration="1154000" />
       <workItem from="1577212456232" duration="760000" />
-      <workItem from="1577362664259" duration="3606000" />
+      <workItem from="1577362664259" duration="6555000" />
+      <workItem from="1577977231125" duration="1407000" />
+      <workItem from="1578232959134" duration="11098000" />
     </task>
     <task id="LOCAL-00001" summary="44-49:CONNECT AND CREATED USERS PAGE">
       <created>1577139629201</created>
@@ -154,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577365454031</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="52:SIDE EFFECT">
+      <created>1577366682169</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577366682169</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +188,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="44-49:CONNECT AND CREATED USERS PAGE" />
     <MESSAGE value="51:USERS API SERVER REQUEST" />
-    <option name="LAST_COMMIT_MESSAGE" value="51:USERS API SERVER REQUEST" />
+    <MESSAGE value="52:SIDE EFFECT" />
+    <option name="LAST_COMMIT_MESSAGE" value="52:SIDE EFFECT" />
   </component>
 </project>

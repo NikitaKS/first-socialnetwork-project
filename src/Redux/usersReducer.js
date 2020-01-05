@@ -1,36 +1,44 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USER = 'SET-USER';
+const SET_CURRENT_PAGE = 'SET-CURRENT_PAGE';
+const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 
 let initialState = {
-    users: []
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1
 };
 
 const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case FOLLOW:
-            return  {
+            return {
                 ...state, users: state.users.map(u => {
-                    if (u.id === action.userId){
-                        return {...u, followed:true}
+                    if (u.id === action.userId) {
+                        return {...u, followed: true}
                     }
                     return u;
                 })
             };
-
-
         case UNFOLLOW:
-            return  {
+            return {
                 ...state, users: state.users.map(u => {
-                    if (u.id === action.userId){
-                        return {...u, followed:false}
+                    if (u.id === action.userId) {
+                        return {...u, followed: false}
                     }
                     return u;
                 })
             };
         case SET_USER:
-            return {...state, users:[...state.users, ...action.users]};
+            return {...state, users: action.users};
+        case SET_TOTAL_COUNT:
+            return {...state, totalUsersCount: action.totalCount};
+        case SET_CURRENT_PAGE: {
+            return {...state, currentPage: action.currentPage}
+        }
 
         default:
             return state;
@@ -39,5 +47,7 @@ const usersReducer = (state = initialState, action) => {
 
 export const followAC = (userId) => ({type: FOLLOW, userId});
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId});
+export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setUsersAC = (users) => ({type: SET_USER, users});
+export const setTotalusersCountAC = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount});
 export default usersReducer;

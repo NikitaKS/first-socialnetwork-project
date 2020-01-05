@@ -3,3 +3,9 @@
     height: 100px;
     border-radius: 50px;
 }
+.selectedPage{
+    margin-right: 10px;
+}
+.active {
+    font-weight: bold;
+}
