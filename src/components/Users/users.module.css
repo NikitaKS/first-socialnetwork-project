@@ -9,3 +9,8 @@
 .active {
     font-weight: bold;
 }
+.pagination{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+}
