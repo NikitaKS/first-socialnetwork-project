@@ -3,6 +3,7 @@ import s from "./users.module.css";
 import defaultUserPhoto from "../../assets/img/userdef.png";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
+import {userAPI as usersAPI} from "../../api/api";
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -34,45 +35,39 @@ let Users = (props) => {
                             </div>
                             <div>
                                 {u.followed ?
-                                    <button onClick={() => {
-                                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                                            {
-                                                withCredentials: true,
-                                                headers: {'API-KEY': '6f891ce6-6725-4088-ae30-9893aa916124'}
-                                            }
-                                        ).then(response => {
-                                            if (response.data.resultCode === 0) {
+                                    <button disabled={props.isFollowing.some(id => id === u.id)} onClick={() => {
+                                        props.toggleFollowing(true, u.id);
+                                        usersAPI.unfollow(u.id).then(data => {
+                                            if (data.resultCode === 0) {
                                                 props.unfollow(u.id)
                                             }
+                                            props.toggleFollowing(false, u.id);
                                         });
                                     }}>Unfollow</button> :
-                                    <button onClick={() => {
-                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                                            {},
-                                            {
-                                                withCredentials: true,
-                                                headers: {'API-KEY': '6f891ce6-6725-4088-ae30-9893aa916124'}
-                                            }
-                                        ).then(response => {
-                                            if (response.data.resultCode === 0) {
+                                    <button disabled={props.isFollowing.some(id => id === u.id)} onClick={() => {
+
+                                        props.toggleFollowing(true, u.id);
+                                        usersAPI.follow(u.id).then(data => {
+                                            if (data.resultCode === 0) {
                                                 props.follow(u.id)
                                             }
+                                            props.toggleFollowing(false, u.id);
                                         });
                                     }}>Follow</button>}
-                                        </div>
-                                        </span>
-                                        <span>
-                                        <div>{u.name}</div>
-                                        <div> {u.status} </div>
-                                        </span>
-                                        <span>
-                                        <div>{"u.location.country"}</div>
-                                        <div>{"u.location.city"}</div>
-                                        </span>
-                                        </div>
-                                        })
-                                        }
-                                        </div>
-                                        )
-                                        };
-                                        export default Users;
+                            </div>
+                        </span>
+                        <span>
+                            <div>{u.name}</div>
+                            <div> {u.status} </div>
+                        </span>
+                        <span>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
+                        </span>
+                    </div>
+                })
+            }
+        </div>
+    )
+};
+export default Users;
