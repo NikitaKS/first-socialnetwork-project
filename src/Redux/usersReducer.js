@@ -1,3 +1,5 @@
+import {userAPI as usersAPI} from "../api/api";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USER = 'SET-USER';
@@ -12,7 +14,7 @@ let initialState = {
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
-    followingInProgress: [5667],
+    followingInProgress: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -67,4 +69,46 @@ export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, curre
 export const toggleIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const toggleIsFollowingAC = (isFollowing, userId) => ({type: TOGGLE_IS_FOLLOWPROGRESS, isFollowing, userId});
 export const setTotalusersCountAC = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount});
+
+//SANKA
+export const getUsers = (currentPage, pageSize) => {
+    return (dispatch) => {
+        dispatch(toggleIsFetchingAC(true));
+        // if (this.props.users.length === 0) {
+        usersAPI.getUsers(currentPage, pageSize).then(data => {
+            dispatch(toggleIsFetchingAC(false));
+            dispatch(setUsersAC(data.items));
+            dispatch(setTotalusersCountAC(data.totalCount));
+        });
+    }
+    // } else {
+    //     this.props.toggleIsFetching(false);
+    // }
+};
+
+export const followThunk = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleIsFollowingAC(true, userId));
+
+        usersAPI.follow(userId).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(follow(userId))
+            }
+            dispatch(toggleIsFollowingAC(false, userId));
+        });
+    }
+};
+export const unFollowThunk = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleIsFollowingAC(true, userId));
+        usersAPI.unfollow(userId).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(unfollowAC(userId))
+            }
+            dispatch(toggleIsFollowingAC(false, userId));
+        });
+    }
+};
+
+
 export default usersReducer;
