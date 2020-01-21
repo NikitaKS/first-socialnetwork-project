@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d66b475-55f8-4de7-b894-4399f3e5339b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Login/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/WithAuthReirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/WithAuthReirect.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +146,10 @@
       <workItem from="1578590051591" duration="169000" />
       <workItem from="1579009901671" duration="5696000" />
       <workItem from="1579032527005" duration="9082000" />
-      <workItem from="1579189395745" duration="20628000" />
+      <workItem from="1579189395745" duration="20669000" />
+      <workItem from="1579548069010" duration="3972000" />
+      <workItem from="1579633441494" duration="288000" />
+      <workItem from="1579636172481" duration="1525000" />
     </task>
     <task id="LOCAL-00001" summary="44-49:CONNECT AND CREATED USERS PAGE">
       <created>1577139629201</created>
@@ -220,7 +221,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579279607264</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="68:REDIRECT">
+      <created>1579281447318</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1579281447318</updated>
+    </task>
+    <task id="LOCAL-00012" summary="69:HOC WITHOUT CONNECT">
+      <created>1579637355585</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1579637355585</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +265,8 @@
     <MESSAGE value="62: follow unfollow api" />
     <MESSAGE value="63-64: DAL axios.create and follow/unfollow disable" />
     <MESSAGE value="65-67: redux-thunk" />
-    <option name="LAST_COMMIT_MESSAGE" value="65-67: redux-thunk" />
+    <MESSAGE value="68:REDIRECT" />
+    <MESSAGE value="69:HOC WITHOUT CONNECT" />
+    <option name="LAST_COMMIT_MESSAGE" value="69:HOC WITHOUT CONNECT" />
   </component>
 </project>

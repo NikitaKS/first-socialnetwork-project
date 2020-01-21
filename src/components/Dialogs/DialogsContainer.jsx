@@ -37,8 +37,7 @@ import {WithAuthRedirect} from "../../hoc/WithAuthReirect";
 
 let mapStateToProps = (state) => {
     return {
-        messagePage: state.messagePage,
-        isAuth: state.auth.isAuth
+        messagePage: state.messagePage
     }
 };
 let mapDispatchToProps = (dispatch) => {

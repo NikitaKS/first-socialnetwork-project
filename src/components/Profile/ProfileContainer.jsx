@@ -30,8 +30,7 @@ let AuthRedirectComponent = WithAuthRedirect(ProfileContainer);
 // };
 
 let mapStateToProps = (state) => ({
-    profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth
+    profile: state.profilePage.profile
 });
 
 let WithRouterUrlDataContainerComponent = withRouter(AuthRedirectComponent);
