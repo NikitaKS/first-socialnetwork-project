@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {getUserProfileThunk} from "../../Redux/profileReducer";
 import {Redirect, withRouter} from "react-router-dom";
 import {WithAuthRedirect} from "../../hoc/WithAuthReirect";
+import {compose} from "redux";
 
 class ProfileContainer extends Component {
     componentDidMount() {
@@ -22,17 +23,23 @@ class ProfileContainer extends Component {
     }
 }
 
-let AuthRedirectComponent = WithAuthRedirect(ProfileContainer);
-
-//     (props) => {
-//     if (!this.props.isAuth) return <Redirect to={'/login'}/>;
-//     return <ProfileContainer {...props} />
-// };
-
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile
 });
 
-let WithRouterUrlDataContainerComponent = withRouter(AuthRedirectComponent);
+export default compose(
+    connect(mapStateToProps, {getUserProfileThunk}), // 3
+    withRouter, // 2
+    WithAuthRedirect // 1
+)(ProfileContainer);
 
-export default connect(mapStateToProps, {getUserProfileThunk})(WithRouterUrlDataContainerComponent);
+// let AuthRedirectComponent = WithAuthRedirect(ProfileContainer);
+//
+// //     (props) => {
+// //     if (!this.props.isAuth) return <Redirect to={'/login'}/>;
+// //     return <ProfileContainer {...props} />
+// // };
+//
+// let WithRouterUrlDataContainerComponent = withRouter(AuthRedirectComponent);
+//
+// export default connect(mapStateToProps, {getUserProfileThunk})(WithRouterUrlDataContainerComponent);

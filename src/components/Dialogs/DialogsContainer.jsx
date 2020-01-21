@@ -3,6 +3,7 @@ import {onAddMessageTextActionCreator, onMessageChangeTextActionCreator} from ".
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {WithAuthRedirect} from "../../hoc/WithAuthReirect";
+import {compose} from "redux";
 
 // const DialogsContainer = (props) => {
 //     // let state = props.store.getState().messagePage;
@@ -51,12 +52,20 @@ let mapDispatchToProps = (dispatch) => {
         },
     }
 };
-let AuthRedirectComponent = WithAuthRedirect(Dialogs);
 
-// let AuthRedirectComponent = (props) => {
-//     if (!this.props.isAuth) return <Redirect to={'/login'}/>;
-//     return <Dialogs {...props} />
-// };
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
+const DialogsContainer = compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    WithAuthRedirect //снизу вверх первое редирект второе коннект
+)(Dialogs);
 
 export default DialogsContainer;
+
+// let AuthRedirectComponent = WithAuthRedirect(Dialogs);
+//
+// // let AuthRedirectComponent = (props) => {
+// //     if (!this.props.isAuth) return <Redirect to={'/login'}/>;
+// //     return <Dialogs {...props} />
+// // };
+// const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
+
+
