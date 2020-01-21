@@ -1,0 +1,18 @@
+import React from 'react';
+import {Redirect} from "react-router-dom";
+
+export const WithAuthRedirect = (Component) => {
+    class RedirectComponent extends React.Component {
+        constructor(props) {
+            super(props);
+            // От куда приходят пропсы  if (!this.props.isAuth) return <Redirect to={'/login'}/>;
+        }
+
+        render() {
+            if (!this.props.isAuth) return <Redirect to={'/login'}/>;
+            return <Component {...this.props} />
+        }
+    }
+
+    return RedirectComponent;
+};
