@@ -68,7 +68,6 @@ export default compose(
         setCurrentPage: setCurrentPageAC,
         toggleFollowing: toggleIsFollowingAC,
         getUsers, followThunk, unFollowThunk
-
     }),
     WithAuthRedirect
 )(UsersContainer);

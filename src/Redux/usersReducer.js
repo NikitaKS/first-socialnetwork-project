@@ -89,7 +89,6 @@ export const getUsers = (currentPage, pageSize) => {
 export const followThunk = (userId) => {
     return (dispatch) => {
         dispatch(toggleIsFollowingAC(true, userId));
-
         usersAPI.follow(userId).then(data => {
             if (data.resultCode === 0) {
                 dispatch(follow(userId))
