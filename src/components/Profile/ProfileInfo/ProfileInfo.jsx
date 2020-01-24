@@ -23,7 +23,7 @@ function ProfileInfo(props) {
                 fullName: {props.profile.fullName} <br/>
                 UserID: {props.profile.userId} <br/>
             </div>
-            <ProfileStatus status={'hello'}/>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>
     );
 }
