@@ -18,12 +18,18 @@ class ProfileStatus extends Component {
         this.props.updateStatus(this.state.status)
     };
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({status: this.props.status});
+        }
+    }
+
     render() {
         return (
             <>
                 {!this.state.editMode &&
                 <div>
-                    <span onDoubleClick={this.activateEditMode}> {this.props.status|| '*****'} </span>
+                    <span onDoubleClick={this.activateEditMode}> {this.props.status || '*****'} </span>
                 </div>
                 }
                 {this.state.editMode &&
