@@ -19,7 +19,8 @@ class ProfileStatus extends Component {
     };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.status !== this.props.status) {
+        // debugger
+        if (prevProps.status !== this.props.status) { //то ппопадает в дебаг то нет . два раза подряд в дебаг
             this.setState({status: this.props.status});
         }
     }

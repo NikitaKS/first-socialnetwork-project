@@ -50,3 +50,8 @@ export const authAPI = {
         return instance.get('auth/me');
     }
 };
+export const loginAPI = {
+    login(email, password, rememberMe) {
+        return instance.put('auth/login', email, password, rememberMe);
+    }
+};
