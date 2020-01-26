@@ -1,6 +1,5 @@
 import ava from "../AVA.jpg";
 
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE';
 
 let initialState = {
@@ -20,20 +19,15 @@ let initialState = {
         {message: 'React', id: 1},
         {message: 'Learn', id: 6}
     ],
-    newMessage: '',
 };
 
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_TEXT:
-            return {...state, newMessage: action.newtext};
-
         case ADD_NEW_MESSAGE:
-            let newMessage = {message: state.newMessage, id: 1};
+            let newMessage = {message: action.newMessageText, id: 1};
             return {
                 ...state,
-                newMessage: '',
                 messageData: [...state.messageData, newMessage]
             };
 
@@ -41,6 +35,5 @@ const dialogsReducer = (state = initialState, action) => {
             return state;
     }
 };
-export const onAddMessageTextActionCreator = () => ({type: ADD_NEW_MESSAGE});
-export const onMessageChangeTextActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newtext: text});
+export const onAddMessageTextActionCreator = (newMessageText) => ({type: ADD_NEW_MESSAGE, newMessageText});
 export default dialogsReducer;
