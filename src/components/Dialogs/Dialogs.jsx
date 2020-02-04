@@ -3,7 +3,7 @@ import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./MessageItem/MessageItem";
 import {Redirect} from "react-router-dom";
-import {Field, reduxForm} from "redux-form";
+import ReduxMessageForm from './AddMessageForm'
 
 const Dialogs = (props) => {
 
@@ -31,14 +31,5 @@ const Dialogs = (props) => {
     )
 };
 
-const addMessageForm = (props) => {
-    return (
-        <form onSubmit={props.handleSubmit}>
-            <Field component={'textarea'} name={'messageText'} placeholder={'Enter your message'}/>
-            <button>Send</button>
-        </form>
-    )
-};
-const ReduxMessageForm = reduxForm({form: 'dialogMessageForm'})(addMessageForm);
 
 export default Dialogs;

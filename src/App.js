@@ -21,16 +21,15 @@ const App = (props) => {
                 <Nav/>
                 <div className='app-wrapper-content'>
                     <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
+                    {/*:userId - params for withRouter // если есть ? то параметр не обязателен*/}
                     <Route path="/dialogs" render={() => <DialogsContainer/>}/>
                     <Route path="/news" component={News}/>
-                    {/*:userId - params for withRouter // если есть ? то параметр не обязателен*/}
                     <Route path="/users" render={() => <UsersContainer/>}/>
                     <Route path="/music" component={Music}/>
                     <Route path="/settings" component={Settings}/>
                     <Route path="/friends" component={Friends}/>
                     <Route path="/login" render={() => <Login/>}/>
                 </div>
-
             </div>
         </BrowserRouter>
 
