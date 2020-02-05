@@ -12,3 +12,4 @@ export default Message;
 Message.propTypes = {
     message: PropTypes.string,
 };
+

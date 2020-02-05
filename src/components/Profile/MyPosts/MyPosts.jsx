@@ -21,7 +21,6 @@ const MyPosts = (props) => {
             <div>
                 <div>
                     <ReduxPostForm onSubmit={onAddPost}/>
-                    {/*<textarea onChange={onPostChange} ref={inputRef} value={props.newPostText}/>*/}
                 </div>
             </div>
             <div className={s.posts}>
@@ -36,7 +35,8 @@ export default MyPosts;
 const PostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field component={TextArea} placeholder={'Post message'} name={'postText'} validate={[requiredField,maxLength15]}/>
+            <Field component={TextArea} placeholder={'Post message'} name={'postText'}
+                   validate={[requiredField, maxLength15]}/>
             <button>Add Post</button>
         </form>
     )
