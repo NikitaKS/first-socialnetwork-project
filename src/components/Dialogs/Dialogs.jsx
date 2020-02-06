@@ -26,7 +26,6 @@ const Dialogs = (props) => {
                 {MessageItems}
                 <ReduxMessageForm onSubmit={onAddMessage}/>
             </div>
-
         </div>
     )
 };
