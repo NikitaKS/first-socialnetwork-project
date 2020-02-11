@@ -29,15 +29,14 @@ export const setAuthUsersDataAC = (id, email, login, isAuth) => ({
     data: {id, email, login, isAuth}
 });
 
-export const authMeThunk = () => {
-    return (dispatch) => {
-        authAPI.me().then(response => {
-            let {id, email, login} = response.data.data;
-            if (response.data.resultCode === 0) {
-                dispatch(setAuthUsersDataAC(id, email, login, true));
-            }
-        });
-    }
+export const authMeThunk = () => (dispatch) => {
+    return authAPI.me().then(response => {
+        let {id, email, login} = response.data.data;
+        if (response.data.resultCode === 0) {
+            dispatch(setAuthUsersDataAC(id, email, login, true));
+        }
+    });
+
 };
 export const loginTC = (email, password, rememberMe) => (dispatch) => {
     authAPI.login(email, password, rememberMe).then(response => {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Nav from "./components/Nav/Nav";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -11,11 +11,22 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
+import {connect} from "react-redux";
+import {compose} from "redux";
+import {initializeAppTC} from "./Redux/appReducer";
+import Preloader from "./components/common/Preloader";
 
 
-const App = (props) => {
-    return (
-        <BrowserRouter>
+class App extends Component {
+    componentDidMount() {
+        this.props.initializeAppTC()
+    }
+
+    render() {
+        if (!this.props.initialized) {
+            return <Preloader/>
+        }
+        return (
             <div className='app-wrapper'>
                 <HeaderContainer/>
                 <Nav/>
@@ -31,9 +42,16 @@ const App = (props) => {
                     <Route path="/login" render={() => <Login/>}/>
                 </div>
             </div>
-        </BrowserRouter>
+        );
+    }
+}
 
-    );
+let mstp = (state) => {
+    return {
+        initialized: state.app.initialized
+    }
 };
-
-export default App;
+export default compose(
+    connect(mstp, {initializeAppTC}),
+    withRouter,
+)(App);

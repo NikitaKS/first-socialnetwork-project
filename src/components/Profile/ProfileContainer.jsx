@@ -10,7 +10,10 @@ class ProfileContainer extends Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;// from withRouter
         if (!userId) {
-            userId = this.props.userId;
+            userId = this.props.autorizedUserId;
+            if (!userId){
+                this.props.history.push('/login');
+            }
         }
         this.props.getUserProfileThunk(userId);
         this.props.getUserStatus(userId)
@@ -27,14 +30,14 @@ class ProfileContainer extends Component {
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status:state.profilePage.status,
-    userId:state.auth.id,
+    autorizedUserId:state.auth.id,
     isAuth: state.auth.isAuth
 });
 
 export default compose(
     connect(mapStateToProps, {getUserProfileThunk,getUserStatus:getUserStatusTC,updateStatusTC}), // 3
     withRouter, // 2
-    WithAuthRedirect // 1
+    // WithAuthRedirect // 1
 )(ProfileContainer);
 
 // let AuthRedirectComponent = WithAuthRedirect(ProfileContainer);

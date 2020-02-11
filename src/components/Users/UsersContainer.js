@@ -69,7 +69,7 @@ export default compose(
         toggleFollowing: toggleIsFollowingAC,
         getUsers, followThunk, unFollowThunk
     }),
-    WithAuthRedirect
+    // WithAuthRedirect
 )(UsersContainer);
 
 // export default WithAuthRedirect(connect(mapStateToProps, {
