@@ -71,7 +71,7 @@ export const toggleIsFollowingAC = (isFollowing, userId) => ({type: TOGGLE_IS_FO
 export const setTotalusersCountAC = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount});
 
 //SANKA
-export const getUsers = (currentPage, pageSize) => {
+export const getUsersTC = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetchingAC(true));
         // if (this.props.users.length === 0) {

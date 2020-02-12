@@ -1,4 +1,4 @@
-import {authAPI} from "../api/api";
+
 import {authMeThunk} from "./authReducer";
 
 
