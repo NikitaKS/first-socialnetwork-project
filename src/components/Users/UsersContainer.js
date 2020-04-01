@@ -16,6 +16,7 @@ import {
     getPageSize,
     getTotalUsersCount, getUsersSuperSelector,
 } from "../../Redux/usersSelectors";
+import Paginator from "../common/Paginator/Paginator";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -45,6 +46,8 @@ class UsersContainer extends React.Component {
 
     render() {
         return <>
+            <Paginator totalItemsCount={this.props.totalUsersCount} pageSize={this.props.pageSize}
+                       onPageChanged={this.onPageChanged} currentPage={this.props.currentPage}/>
             {
                 this.props.isFetching ?
                     <Preloader/> :
